@@ -1,5 +1,6 @@
   var https = require('https');
-  function getHTML (options, callback) {
+  module.exports = function getHTML (options, callback) {
+
     if(typeof callback !== 'function') {
       throw new Error('Must provide a callback function');
     }
@@ -14,18 +15,4 @@
         callback(responseString);
       });
     });
-
-  /* Add your code here */
-
   }
-
-  function printHTML (html) {
-    console.log(html);
-  }
-
-  var requestOptions = {
-    host: 'sytantris.github.io',
-    path: '/http-examples/step4.html'
-  };
-
-  getHTML(requestOptions, printHTML);
